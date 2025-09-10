@@ -1,44 +1,85 @@
-<link rel="stylesheet" href="style.css"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CloudPlay Hub</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Gaming Hub</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-        <h1>🎮 CloudPlay Hub Premium</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Biblioteca</a></li>
-                <li><a href="#">Chikii</a></li>
-                <li><a href="#">Raccoon</a></li>
-                <li><a href="#">Game Pass</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>🎮 Cloud Gaming Hub</h1>
+    <p>Jogue na nuvem e conecte dois aparelhos para jogar juntos</p>
+  </header>
 
-    <section class="banner">
-        <h2>Jogos na Nuvem — Xbox, PC e Mobile</h2>
-        <p>Jogue GTA V, FIFA 23, Naruto Boruto, God of War e muito mais! 🚀</p>
-        <button onclick="alert('Em breve disponível!')">Começar a Jogar</button>
-    </section>
-
+  <main>
+    <!-- Plataformas -->
     <section class="games">
-        <h3>🔥 Destaques</h3>
-        <div class="game-grid">
-            <div class="game-card">GTA V</div>
-            <div class="game-card">FIFA 23</div>
-            <div class="game-card">Naruto Boruto</div>
-            <div class="game-card">Forza Horizon 4</div>
-            <div class="game-card">God of War</div>
-        </div>
+      <h2>🌐 Plataformas de Cloud Gaming</h2>
+      <div class="btn-container">
+        <!-- Chikii Web e App -->
+        <a href="https://www.chikiigame.com/" target="_blank" class="btn chikii">
+          🌐 Chikii (Web)
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.dmxinteractive.chikii" target="_blank" class="btn chikii-app">
+          📲 Chikii (App)
+        </a>
+        <!-- RaccoonGame -->
+        <a href="https://raccoongame.com/" target="_blank" class="btn raccoon">
+          🦝 RaccoonGame
+        </a>
+        <!-- Outros -->
+        <a href="https://play.geforcenow.com/" target="_blank" class="btn geforce">
+          ⚡ GeForce NOW
+        </a>
+        <a href="https://www.xbox.com/play" target="_blank" class="btn xbox">
+          🎮 Xbox Cloud
+        </a>
+        <a href="https://boosteroid.com/" target="_blank" class="btn boosteroid">
+          🚀 Boosteroid
+        </a>
+        <!-- PS5 -->
+        <a href="https://www.playstation.com/remote-play/" target="_blank" class="btn ps5">
+          🎮 PS5 (Remote Play)
+        </a>
+      </div>
     </section>
 
-    <footer>
-        <p>© 2025 CloudPlay Hub — Todos os direitos reservados</p>
-    </footer>
+    <!-- Jogos grátis online -->
+    <section class="free-games">
+      <h2>🎯 Jogos Grátis no Navegador</h2>
+      <iframe src="https://www.retrogames.cc/embed/24747-pokemon-fire-red-version-u-independent.html" 
+              width="100%" height="400" frameborder="0" allowfullscreen>
+      </iframe>
+      <p>Exemplo de jogo rodando direto no navegador.</p>
+    </section>
+
+    <!-- Conexão Wi-Fi/WebRTC + QR -->
+    <section class="connect">
+      <h2>🔗 Conexão Rápida (Wi-Fi/WebRTC + QR)</h2>
+      <p>Use o QR Code para conectar dois aparelhos e jogar juntos em tempo real!</p>
+      <div class="btn-container">
+        <button id="btnHost" class="btn primary">🟢 Criar Convite</button>
+        <div id="hostQR" class="qr-box"></div>
+        <textarea id="hostOfferText" class="mono" placeholder="Convite"></textarea>
+        <button id="btnScanAnswer" class="btn">📷 Ler Resposta do Convidado</button>
+        <video id="answerVideo" playsinline class="hidden"></video>
+        <p id="answerStatus" class="status"></p>
+
+        <button id="btnScanOffer" class="btn">📷 Ler Convite do Host</button>
+        <video id="offerVideo" playsinline class="hidden"></video>
+        <textarea id="guestOfferText" class="mono" placeholder="Convite do Host"></textarea>
+        <button id="btnMakeAnswer" class="btn primary">🔵 Gerar Resposta</button>
+        <div id="guestQR" class="qr-box"></div>
+        <textarea id="guestAnswerText" class="mono" placeholder="Resposta"></textarea>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Cloud Gaming Hub — Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
